@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -34,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(horizontalAdapter);
         initData();
-
+        CoordinatorLayout coordinatorLayout= (CoordinatorLayout) findViewById(R.id.main_content);
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.sheet_detail_toolbar_layout);
-        //collapsingToolbar.setTitle("标题"); //设置标题
-        // collapsingToolbar.setCollapsedTitleGravity(Gravity.CENTER);//设置收缩后标题的位置
+//        collapsingToolbar.setTitle("标题"); //设置标题
+//        collapsingToolbar.setCollapsedTitleGravity(Gravity.CENTER );//设置收缩后标题的位置
 //        collapsingToolbar.setExpandedTitleGravity(Gravity.CENTER);////设置展开后标题的位置
 
 
@@ -53,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         //监听折叠
         AppBarLayout sheet_detail_app_bar = (AppBarLayout) findViewById(R.id.sheet_detail_app_bar);
+
         sheet_detail_app_bar.addOnOffsetChangedListener(new AppBarStateChangeListener() {
             @Override
             public void onStateChanged(AppBarLayout appBarLayout, State state) {
@@ -63,9 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     //展开状态
 //                  sheet_detail_toolbar.setNavigationIcon(null);
                     sheet_detail_toolbar.setNavigationIcon(R.mipmap.back);
-
                 } else if (state == State.COLLAPSED) {
-
                     //折叠状态
                     sheet_detail_toolbar.setNavigationIcon(R.mipmap.back);
 

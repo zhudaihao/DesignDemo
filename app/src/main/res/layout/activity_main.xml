@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app1="http://schemas.android.com/tools"
     android:id="@+id/sheet_detail_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -12,16 +13,20 @@
         android:fitsSystemWindows="true">
 
         <!-- app:titleEnabled="false" 去掉标题-->
+        <!--app:layout_scrollFlags="scroll|exitUntilCollapsed" 向上推bar显示-->
+        <!--app:layout_scrollFlags="scroll|enterAlwaysCollapsed" 向上推bar不显示-->
+        <!--app:layout_collapseMode="parallax"  图片折叠效果-->
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/sheet_detail_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@mipmap/tp"
+            app:titleEnabled="false"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <!--app:navigationIcon="@mipmap/back" 设置返回键-->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/sheet_detail_toolbar"
                 android:layout_width="match_parent"
