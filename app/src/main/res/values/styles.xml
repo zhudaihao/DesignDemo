@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="android:colorControlHighlight">@color/colorAccent</item>&lt;!&ndash;设置水波纹颜色&ndash;&gt;  21以上才可以用-->
+        <item name="android:colorButtonNormal">@color/colorPrimary</item><!--默认模式按钮背景颜色  21以上才可以用-->
     </style>
 
 

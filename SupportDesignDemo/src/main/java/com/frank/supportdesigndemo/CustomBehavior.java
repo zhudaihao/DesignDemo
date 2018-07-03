@@ -19,13 +19,15 @@ public class CustomBehavior extends Behavior<View> {
 	 * 用来决定需要监听哪些控件或者容器的状态（1.知道监听谁；2.什么状态改变）
 	 * CoordinatorLayout parent ，父容器
 	 * View child, 子控件---需要监听dependency这个view的视图们---观察者
-	 View dependency，你要监听的那个View
+	 View dependency，你要监听的那个View 被观察者
 	 */
 	@Override
 	public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) {
 		//还可以根据ID或者TAG来判断
 		return dependency instanceof TextView||super.layoutDependsOn(parent, child, dependency);
 	}
+
+
 
 	/**
 	 * 当被监听的view发生改变的时候回调
